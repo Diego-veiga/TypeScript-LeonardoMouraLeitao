@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Emprestimo_item_1 = require("./modelo/Emprestimo_item");
+const Emprestimo_1 = require("./modelo/Emprestimo");
+const Livro_1 = require("./modelo/Livro");
+const Sexo_1 = require("./enum/Sexo");
+const Aluno_1 = require("./modelo/Aluno");
+const aluno = new Aluno_1.Aluno('Diego', 25, Sexo_1.Sexo.Masculino, 123);
+const livro1 = new Livro_1.Livro('MINDSET', new Date('2002-03-25'), 150, 5, 4);
+const livro2 = new Livro_1.Livro('Inteligencia Emocional', new Date('2014-06-12'), 150, 15, 10);
+const emprestimo1 = new Emprestimo_1.Emprestimo();
+const empItem1 = new Emprestimo_item_1.Emprestimo_item(emprestimo1, livro1);
+const empItem2 = new Emprestimo_item_1.Emprestimo_item(emprestimo1, livro2);
+emprestimo1.AddItemEmprestimo(empItem1);
+emprestimo1.AddItemEmprestimo(empItem2);
+emprestimo1.AddItemEmprestimo(empItem1);
+console.log(emprestimo1);

@@ -1,0 +1,73 @@
+﻿para baixar o typeScript de forma global
+npm i - g typescript
+
+ver a versão do typeScript instalada 
+typeScript -v
+
+para iniciar o typeScript
+tsc --init
+
+executar o arquio .ts
+tsc nomedoarquivo 
+OBS: vai gerar um arquivo .js
+
+plugin para  executar o arquivo ts via code runner
+npm i -g ts-node
+
+
+pluglin para criar um servidor
+npm i -s live-server
+
+tsc -w
+fica monitorando o arquivo para ver se tem mudança e moddifica o arquivo js 
+
+tsc --target es5(versão do javascript) nomedoArquivo.ts
+
+compila o arquivo para versão que vc colcoar
+
+/******CAPITULO 2 COMPILADORES *******/
+
+no arquivo tsconfig.json, temos varias configurações referente ao typeScript, 
+vamos ver a primeira delas:
+
+onEmitOnErro:
+onEmitOnErro: esta configuração determina se o arquivo .js será gerado ou não, 
+caso deixe como true o mesmo  será gerado, caso deixe como false o mesmo não será gerado 
+
+target:
+uma segunda configuração que vamos ver seria target esta configuração detrmina para,
+qual versão será gerado o codigo javascript, podemos clocar es6 por exemplo
+ou qualquer outra versão do chava script.
+
+sourceMap:
+Ao habilitar este parametro como true, o compilador gerarra o  aquivo .js.map onde será  para debig no codigo
+
+noImplicitAny:
+Ao habilitar este parametro o mesmo não ira emitir erro quando uma variavel do for implicitamente tipo any Ex:
+function(a , b){
+    return a* b
+}
+
+strictNullChecks:
+Ao habilitar este parametro será retornando erros quando o valor de variavel ou função for null, quando setada para false não será,
+feito nenhuma alerta , porem não é recomendado 
+
+noUnusedLocals:
+Quando habilitada será retornada erros em variavel declaradas porem não utilziadas.
+
+noUnusedParameters: 
+Quando habilitada será emitodo erro em locais onde o prametro foi declarado mas não utilizado.
+
+outDir:
+Este parametro serve para configurar o caminhos onde os arquivos .js gerados a partir transpilação serão colocado 
+
+outFile:
+ Este parametro serve para configurar um arquivo .js unico onde sera colocado todo o codigo gerado
+
+
+
+ /*******Namespaces****/
+
+tsc -w --outFile nomeDOarquivoDeDestino.js  nomes dos arquivos de partida
+
+
